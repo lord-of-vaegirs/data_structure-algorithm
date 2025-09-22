@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "*.cpp": "cpp",
+        "*.h": "c",
+        "iostream": "cpp",
+        "queue": "cpp",
+        "vector": "cpp",
+        "__config": "cpp",
+        "string": "cpp"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "cpp": "clang++ -std=c++17 -Wall -g $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+    }
+}

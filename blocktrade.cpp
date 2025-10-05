@@ -1,11 +1,11 @@
 #include <iostream>
 #include <string>
-#include "./include/csv.hpp"
+#include "csv.hpp"
 using namespace std;
 using namespace csv;
 
-#define TRANS_MAX 100000
-#define IO_MAX_NUM 50000
+#define TRANS_MAX 30000
+#define IO_MAX_NUM 30000
 
 struct input
 {
@@ -53,13 +53,18 @@ struct blockList
     int size;
 };
 
+input InputArr[IO_MAX_NUM];
+output OutputArr[IO_MAX_NUM];
+transaction T_arr[TRANS_MAX];
+blockList bl;
+
 int main()
 {
     CSVReader blockreader("./demo/blocks.csv");
     CSVReader transreader("./demo/transactions.csv");
     CSVReader inputreader("./demo/inputs.csv");
     CSVReader outputreader("./demo/outputs.csv");
-    blockList bl;
+    
     bl.p->height = -1;
     bl.p->next = NULL;
     bl.p->prev = NULL;
@@ -81,9 +86,7 @@ int main()
     bl.p->prev = cur;
     cur->next = bl.p;
     cur = bl.p;
-    input InputArr[IO_MAX_NUM];
-    output OutputArr[IO_MAX_NUM];
-    transaction T_arr[TRANS_MAX];
+    
     int I_id = 0, O_id = 0, T_id = 0;
     for (CSVRow &row : inputreader)
     {

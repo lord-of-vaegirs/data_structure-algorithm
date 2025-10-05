@@ -242,8 +242,31 @@ int main()
             cout<<"\t\theight txid prev_block prevTxID prevTxOutIndex "<<endl;
             for(int j=0;j<cur->trans_arr[i].input_count;j++)
             {
+                cout<<"\t\t"<<cur->trans_arr[i].ip[j].height<<" "<<cur->trans_arr[i].ip[j].txid<<" "<<cur->trans_arr[i].ip[j].prev_block<<" "<<cur->trans_arr[i].ip[j].prevTxID<<" "<<cur->trans_arr[i].ip[j].prevTxOutIndex<<" "<<endl;
+            }
+            cout<<"\toutput count: "<<cur->trans_arr[i].output_count<<endl;
+            cout<<"\t\theight txid index value "<<endl;
+            for(int j=0;j<cur->trans_arr[i].output_count;j++)
+            {
+                cout<<"\t\t"<<cur->trans_arr[i].op[j].height<<" "<<cur->trans_arr[i].op[j].txid<<" "<<cur->trans_arr[i].op[j].index<<" "<<cur->trans_arr[i].op[j].value<<" "<<endl;
+            }
+        }
+    }
+    cout<<"\n 请输入想查询的交易TxID: "<<endl;
+    string mytxid;
+    cin>>mytxid;
+    for(int i=0;i<T_id;i++)
+    {
+        if(T_arr[i].txid==mytxid)
+        {
+            cout<<"height: "<<T_arr[i].height<<endl;
+            cout<<"is_coinbase: "<<T_arr[i].is_coinbase<<endl;
+            cout<<"input count: "<<T_arr[i].input_count<<endl;
+            for(int j=0;j<T_arr[i].input_count;j++)
+            {
                 
             }
+            break;
         }
     }
     return 0;

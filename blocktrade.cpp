@@ -264,7 +264,12 @@ int main()
             cout<<"input count: "<<T_arr[i].input_count<<endl;
             for(int j=0;j<T_arr[i].input_count;j++)
             {
-                
+                cout<<"\t"<<T_arr[i].ip[j].height<<" "<<T_arr[i].ip[j].txid<<" "<<T_arr[i].ip[j].prev_block<<" "<<T_arr[i].ip[j].prevTxID<<" "<<T_arr[i].ip[j].prevTxOutIndex<<endl;
+            }
+            cout<<"output count: "<<T_arr[i].output_count<<endl;
+            for(int j=0;j<T_arr[i].output_count;j++)
+            {
+                cout<<"\t"<<T_arr[i].op[j].height<<" "<<T_arr[i].op[j].txid<<" "<<T_arr[i].op[j].index<<" "<<T_arr[i].op[j].value<<endl;
             }
             break;
         }

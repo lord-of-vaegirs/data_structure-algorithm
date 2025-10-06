@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "csv.hpp"
+#include <csv.hpp>
 using namespace std;
 using namespace csv;
 
@@ -71,8 +71,8 @@ int main()
         CSVReader outputreader("./demo/outputs.csv");
         bl.p = new block();
         bl.p->height = -1;
-        bl.p->next = NULL;
-        bl.p->prev = NULL;
+        bl.p->next = bl.p;
+        bl.p->prev = bl.p;
         bl.size = 0;
         block *cur;
         cur = bl.p;

@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     resortLinkList
+binary-path:     '/Users/lxjarctane2/Documents/data_structure_algorithm/resortLinkList'
 relocations:     []
 ...

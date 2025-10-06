@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     blocktrade
+binary-path:     '/Users/lxjarctane2/Documents/data_structure_algorithm/blocktrade'
 relocations:     []
 ...

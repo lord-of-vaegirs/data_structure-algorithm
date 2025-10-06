@@ -1,16 +1,10 @@
 {
-    "files.associations": {
-        "*.c": "c",
-        "*.cpp": "cpp",
-        "*.h": "c",
-        "iostream": "cpp",
-        "queue": "cpp",
-        "vector": "cpp",
-        "__config": "cpp",
-        "string": "cpp"
+    "cmake.debugConfig": {
+        "stopAtEntry": false,
+        "MIMode": "lldb",
+        "miDebuggerPath": "/usr/bin/lldb"
     },
-    "code-runner.runInTerminal": true,
-    "code-runner.executorMap": {
-        "cpp": "clang++ -std=c++17 -Wall -g $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt"
-    }
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

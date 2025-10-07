@@ -2,69 +2,13 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "clean",
+            "label": "compile",
             "type": "shell",
-            "command": "rm -rf build",
-            "group": "build",
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared"
-            }
-        },
-        {
-            "label": "configure",
-            "type": "shell",
-            "command": "mkdir -p build && cd build && cmake ..",
-            "group": "build",
-            "dependsOn": "clean",
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared"
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceFolder}"],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        {
-            "label": "build",
-            "type": "shell",
-            "command": "cd build && make",
+            "command": "./compile.sh",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "dependsOn": "configure",
-            "presentation": {
-                "reveal": "always",
-                "panel": "shared"
-            },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": ["relative", "${workspaceFolder}"],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                }
-            }
-        },
-        {
-            "label": "rebuild",
-            "type": "shell",
-            "command": "rm -rf build && mkdir -p build && cd build && cmake .. && make",
-            "group": "build",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
@@ -85,12 +29,43 @@
         {
             "label": "run",
             "type": "shell",
-            "command": "./build/bin/data_structure_algorithm",
+            "command": "./run.sh",
             "group": "test",
-            "dependsOn": "build",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
+            }
+        },
+        {
+            "label": "compile-direct",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-mcmodel=large",
+                "-g",
+                "-O0",
+                "-I./external/csv-parser/single_include",
+                "blocktrade.cpp",
+                "-o",
+                "blocktrade"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
             }
         }
     ]

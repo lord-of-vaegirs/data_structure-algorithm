@@ -4,8 +4,8 @@
 using namespace std;
 using namespace csv;
 
-#define TRANS_MAX 30000
-#define IO_MAX_NUM 30000
+#define TRANS_MAX 100     
+#define IO_MAX_NUM 100    
 
 struct input
 {
@@ -64,7 +64,6 @@ int main()
 {
     try
     {
-        /* code */
         CSVReader blockreader("./demo/blocks.csv");
         CSVReader transreader("./demo/transactions.csv");
         CSVReader inputreader("./demo/inputs.csv");
@@ -156,7 +155,7 @@ int main()
         {
             long long input_value = 0;
             long long output_value = 0;
-            for (int i = 0; i < T_id; i++)
+            for (int i = 0; i < cur->trans_size; i++)
             {
                 input_value = 0;
                 output_value = 0;

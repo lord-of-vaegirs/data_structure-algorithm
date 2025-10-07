@@ -1,1 +1,0 @@
-/usr/bin/c++  -g -O0 -mcmodel=large  -mcmodel=large CMakeFiles/data_structure_algorithm.dir/src/blocktrade.cpp.o -o bin/data_structure_algorithm 

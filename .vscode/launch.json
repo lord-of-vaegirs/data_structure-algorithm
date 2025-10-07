@@ -3,24 +3,11 @@
     "configurations": [
         {
             "name": "Debug",
-            "type": "cppdbg",
+            "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/data_structure_algorithm",
-            "args": [],
-            "stopAtEntry": false,
+            "program": "${workspaceFolder}/blocktrade",
             "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "compile-direct"
         }
     ]
 }
